@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
 import pathlib
-import sys
 from collections import namedtuple
 from datetime import datetime
 
@@ -54,9 +53,7 @@ class Molecule:
         None.
 
         """
-        if out is None:
-            self._save(sys.stdout)
-        elif isinstance(out, (str, os.PathLike)):
+        if isinstance(out, (str, os.PathLike)):
             with pathlib.Path(out).open('w', encoding="utf-8") as f:
                 self._save(f)
         else:
