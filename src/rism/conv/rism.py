@@ -94,5 +94,5 @@ class Molecule:
                   f"{a.sigma:10.6f}{a.charge:16.8f}{a.epsilon:10.6f}"
                   f" {a.name:4s} {a.type:4s}"
                   f" {a.residue:4s} {a.res_no:5d}"
-                  f"{a.seg_id:4s}",
+                  f" {a.seg_id:4s}",
                   file=f)
