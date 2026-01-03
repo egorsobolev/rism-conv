@@ -34,9 +34,9 @@ class AmberConverter(BaseConverter):
 
     @staticmethod
     def arguments(ap):
-        ap.add_argument("-p", "--prmtop", type=Path, required=True,
+        ap.add_argument("prmtop", type=Path,
                         help="AMBER prmtop7 file")
-        ap.add_argument("-c", "--inpcrd", type=Path, required=True,
+        ap.add_argument("inpcrd", type=Path,
                         help="AMBER inpcrd file")
 
 
@@ -55,10 +55,9 @@ def main(argv=None):
 
     """
     ap = argparse.ArgumentParser()
-    AmberConverter.arguments(ap)
-
-    ap.add_argument("rtxt", type=Path, nargs='?',
+    ap.add_argument("-o", "--rtxt", type=Path,
                     help="RISM molecule file")
+    AmberConverter.arguments(ap)
 
     args = ap.parse_args(argv)
 
